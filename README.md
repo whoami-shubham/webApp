@@ -15,6 +15,6 @@ This web App performs all basic CRUD oprerations
 # add items
 ![Alt text](create.JPG?raw=true "UI")
 
-There is an option for delete also
+There is an option for update also
 
 
