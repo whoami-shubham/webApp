@@ -6,7 +6,7 @@ This web App performs all basic CRUD oprerations
 ![Alt text](r.JPG?raw=true "UI")
 
 # Menus
-![Alt text](m.JPG?raw=true "UI")
+![Alt text](food.JPG?raw=true "UI")
 
 # Delete items
 
