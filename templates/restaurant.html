@@ -1,0 +1,83 @@
+<html>
+<head>
+  <title>{{restaurant.name}}</title>
+    <style>
+      
+        body,html{
+           margin: 0;
+          width: 100%;
+          background-color: aliceblue;
+        }
+        a:visited{
+        color:blue;
+        }
+        a{
+        text-decoration:none;
+        }
+        span{
+            text-align:center;
+        }
+        td{
+            padding: 2px;
+        }
+        table{
+            margin-top: 0px;
+            padding: 0px;
+            position:inherit;
+            background-color:black;
+            color: white;
+        }
+        p{
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div style="clear: both;margin: 0">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <li style="color: aqua;text-align: center">{{message}}</li>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    </div>
+<div style="width: 100%;margin-top:0">
+<table  align="center" style="width: 50%;clear: both" >
+<tr>
+    <td colspan="2"><p style="text-align:center;color: darkorange; font-size:32px;text-align:center">{{restaurant.name}}</p>
+</td>
+</tr>
+<tr><td>
+<p style><a href="{{url_for('newDish',restaurant_id=restaurant.id)}}" style="font-size:28px;color: green">&nbsp;&nbsp;&nbsp;&nbsp;Add New Dish</a></p></td><td style="font-size:28px;color: red">Price</td></tr>
+<tr>
+    <td colspan="2"><br></td>
+</tr>
+{% for i in item %}
+<tr>
+<td colspan="2" style="font-size:22px;font-weight:400">
+	&nbsp;&nbsp;&nbsp;&nbsp; {{i.name}}
+</td>
+</tr>
+<tr>
+<td colspan="2" style="color:#55dafd">
+	&nbsp;&nbsp;&nbsp;&nbsp; {{i.description}}
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{{url_for('editDish',restaurant_id=restaurant.id,menu_id=i.id)}}">Edit</a>&nbsp;&nbsp;
+<a href="{{url_for('deleteDish',restaurant_id=restaurant.id,menu_id=i.id)}}">Delete</a>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>
+	{{i.price}}
+    </td>
+</tr>
+<tr>
+    <td colspan="2"><br></td>
+</tr>
+{% endfor %}
+</table>
+</div>
+</body>
+</html>

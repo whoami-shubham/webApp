@@ -1,0 +1,15 @@
+<html>
+<head>
+	<title>Delete</title>
+</head>
+<body>
+    <form action="{{url_for('deleteDish',restaurant_id=restaurant_id,menu_id=menu_id)}}" method='POST'>
+    <table align="center">
+    <tr><td colspan="2"><h1 style="text-align:center">Do you Really Want to Delete {{dish.name}} ?</h1></td></tr>
+    <tr><td colspan="2" ><input type='submit' value='Yes' name='y' style="padding:5px;margin-left:30%">
+        <input type="submit" style="padding:5px;margin-left:5%" value="No"></td></tr>
+</table>
+</form>
+</body>
+
+</html>
