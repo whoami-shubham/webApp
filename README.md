@@ -1,6 +1,7 @@
 # webApp
 
-This web App performs all basic CRUD oprerations
+This web App performs all basic CRUD oprerations.<br>
+i have made it two ways from scrach and also using Flask .
 
 # Restarunts
 ![Alt text](r.JPG?raw=true "UI")
